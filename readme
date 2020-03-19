@@ -1,0 +1,23 @@
+原文引用：
+https://www.jianshu.com/p/dca01aad6bc8
+
+一、项目介绍
+
+    springboot版本2.1.5.RELEASE, 旧版本可能有些配置属性不能使用, 需要以代码形式进行配置
+    RabbitMQ版本3.7.15
+    MailUtil: 发送邮件工具类
+    RabbitConfig: rabbitmq相关配置
+    TestServiceImpl: 生产者, 发送消息
+    MailConsumer: 消费者, 消费消息, 发送邮件
+    ResendMsg: 定时任务, 重新投递发送失败的消息
+
+二、实现思路
+
+    简略介绍163邮箱授权码的获取
+    编写发送邮件工具类
+    编写RabbitMQ配置文件
+    生产者发起调用
+    消费者发送邮件
+    定时任务定时拉取投递失败的消息, 重新投递
+    各种异常情况的测试验证
+    拓展: 使用动态代理实现消费端幂等性验证和消息确认(ack)
